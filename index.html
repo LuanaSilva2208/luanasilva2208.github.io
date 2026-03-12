@@ -14,20 +14,19 @@
             --border: #30363d;
         }
 
-        body, html {
+        /* MÉTODO À PROVA DE FALHAS */
+        html, body {
             margin: 0;
             padding: 0;
-            color: var(--text);
+            width: 100%;
+            height: 100%;
             font-family: 'Segoe UI', system-ui, sans-serif;
-            min-height: 100vh;
-            /* IMAGEM DIRETO NO BODY PARA NÃO TER ERRO */
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80');
+            color: var(--text);
+            /* Imagem de planeta tech azul profundo */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1506703387226-bbce5f1669b9?q=80&w=2072&auto=format&fit=crop') no-repeat center center fixed;
             background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-color: #010409; /* Cor de fundo caso a imagem falhe */
+            background-color: #010409; 
         }
 
         .container {
@@ -79,7 +78,7 @@
             padding: 35px;
             border-radius: 20px;
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            transition: 0.3s;
             text-align: left;
         }
 
@@ -99,11 +98,6 @@
             border-radius: 50px;
             font-weight: bold;
             transition: 0.3s;
-        }
-
-        .btn:hover { 
-            transform: scale(1.05);
-            box-shadow: 0 0 20px var(--accent);
         }
 
         .tags span {
@@ -140,17 +134,17 @@
             <div class="card">
                 <i class="devicon-html5-plain" style="font-size: 2rem; color: var(--accent);"></i>
                 <h3>Este Portfólio</h3>
-                <p>Layout expandido com design dark e efeito Glassmorphism.</p>
+                <p>Layout imersivo com design dark e efeito Glassmorphism.</p>
                 <div class="tags"><span>HTML</span><span>CSS</span></div>
             </div>
         </div>
 
-        <h2 style="margin-top: 80px; color: var(--accent);">🛠️ Especialidades</h2>
+        <h2 style="margin-top: 80px; color: var(--accent);">🛠️ Toolbox</h2>
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-            <div class="card" style="text-align: center; padding: 20px;">VTEX Support</div>
+            <div class="card" style="text-align: center; padding: 20px;">VTEX</div>
             <div class="card" style="text-align: center; padding: 20px;">ERP / PDV</div>
             <div class="card" style="text-align: center; padding: 20px;">Git & GitHub</div>
-            <div class="card" style="text-align: center; padding: 20px;">Troubleshooting</div>
+            <div class="card" style="text-align: center; padding: 20px;">IT Support</div>
         </div>
 
         <footer>

@@ -21,7 +21,6 @@
             min-height: 100vh;
             font-family: 'Segoe UI', system-ui, sans-serif;
             color: var(--text);
-            /* Imagem de fibra óptica (azul tecnológico) */
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
                         url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
             background-size: cover;
@@ -116,12 +115,12 @@
 
         footer { margin-top: 100px; padding-bottom: 50px; opacity: 0.7; }
 
-        /* Estilo específico para o logo da VTEX ficar alinhado */
+        /* ESTILO DO LOGO VTEX COM FILTRO AZUL */
         .vtex-logo {
-            display: inline-block;
-            height: 2.5rem; /* Mesma altura dos ícones DevIcon */
-            vertical-align: middle;
+            height: 2.5rem;
             margin-bottom: 10px;
+            /* Filtro para converter o logo original em azul #00d4ff */
+            filter: invert(62%) sepia(94%) saturate(4000%) hue-rotate(155deg) brightness(103%) contrast(101%);
         }
     </style>
 </head>
@@ -140,15 +139,15 @@
         <div class="grid">
             <div class="card">
                 <h3 style="color: var(--accent); margin-top: 0; font-size: 1.5rem;">🙋‍♀️ Sobre Mim</h3>
-                <p>Atuo no suporte técnico especializado e no desenvolvimento de sistemas, unindo a experiência de resolução direta de problemas com a capacidade de criar e manter aplicações robustas.</p>
-                <p>Domino ferramentas essenciais como <strong>SQL</strong> para gestão de banco de dados e <strong>WinDev</strong> para desenvolvimento, garantindo eficiência e qualidade em cada solução entrega.</p>
+                <p>Atuo no suporte técnico especializado e no desenvolvimento de sistemas, unindo a experiência de resolução direta de problemas com a capacidade de manter aplicações robustas.</p>
+                <p>Domino ferramentas como <strong>SQL</strong> para gestão de dados e <strong>WinDev</strong> para desenvolvimento desktop, garantindo eficiência e qualidade em cada solução.</p>
             </div>
 
             <div class="card">
                 <h3 style="color: var(--accent); margin-top: 0; font-size: 1.5rem;">🚀 Stack & Foco</h3>
-                <p>Especializada em desenvolvimento WinDev e manipulação de dados em SQL, além de vivência em ecossistemas complexos de E-commerce.</p>
+                <p>Especializada em desenvolvimento WinDev e manipulação de dados em SQL, além de vivência em ecossistemas de E-commerce.</p>
                 <div class="tags"><span>SQL Server</span><span>WinDev</span><span>Git</span><span>VTEX</span></div>
-                <a href="https://github.com/luanasilva2208" target="_blank" style="color: var(--accent); text-decoration: none; display: block; margin-top: 20px; font-weight: bold;">Ver Repositórios no GitHub →</a>
+                <a href="https://github.com/luanasilva2208" target="_blank" style="color: var(--accent); text-decoration: none; display: block; margin-top: 20px; font-weight: bold;">Ver GitHub →</a>
             </div>
         </div>
 
@@ -167,8 +166,8 @@
                 <p style="margin: 15px 0 0; font-weight: bold;">Git & GitHub</p>
             </div>
             <div class="card" style="text-align: center; padding: 25px;">
-                <img src="https://brand.vtex.com/static/media/vtex-logo.b950dbcc.svg" alt="VTEX Logo" class="vtex-logo">
-                <p style="margin: 10px 0 0; font-weight: bold;">VTEX</p>
+                <img src="data:image/png;base64,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" alt="VTEX Logo" class="vtex-logo">
+                <p style="margin: 0; font-weight: bold;">VTEX</p>
             </div>
         </div>
 

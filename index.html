@@ -75,7 +75,7 @@
             box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
         }
 
-        /* BOTÃO WHATSAPP FLUTUANTE CORRIGIDO */
+        /* BOTÃO WHATSAPP FLUTUANTE */
         .whatsapp-btn {
             position: fixed;
             bottom: 30px;
@@ -94,7 +94,6 @@
         }
 
         .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px var(--whatsapp-green); }
-
         .whatsapp-btn svg { width: 32px; height: 32px; fill: white; }
 
         .btn {
@@ -120,6 +119,13 @@
         }
 
         footer { margin-top: 80px; padding-bottom: 40px; opacity: 0.6; }
+
+        /* Estilo para logos de imagem nos cards */
+        .card-icon-img {
+            height: 2.5rem;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -140,7 +146,7 @@
             <div class="card">
                 <h3 style="color: var(--accent); margin-top: 0;">🙋‍♀️ Sobre Mim</h3>
                 <p>Atuo no suporte técnico especializado (N1) e no desenvolvimento de sistemas (N2), unindo resolução de problemas reais com a criação de aplicações robustas.</p>
-                <p>Domínio em <strong>SQL</strong> e <strong>WinDev</strong> para garantir eficiência e qualidade operacional.</p>
+                <p>Domínio em <strong>SQL</strong> e <strong>WinDev</strong> para garantir eficiência operacional.</p>
             </div>
 
             <div class="card">
@@ -159,8 +165,7 @@
             </div>
             <div class="card" style="text-align: center; padding: 25px;">
                 <img src="https://defkey.com/images/program/windev-25-2020-11-02_10-53-58-icon-resized.webp" 
-                     alt="WinDev Logo" 
-                     style="height: 2.5rem; border-radius: 4px; margin-bottom: 10px;">
+                     alt="WinDev Logo" class="card-icon-img">
                 <p style="font-weight: bold; margin: 0;">WinDev</p>
             </div>
             <div class="card" style="text-align: center; padding: 25px;">
@@ -168,10 +173,9 @@
                 <p style="font-weight: bold; margin-top: 10px;">Git</p>
             </div>
             <div class="card" style="text-align: center; padding: 25px;">
-                <div style="height: 2.5rem; display: flex; align-items: center; justify-content: center;">
-                    <span style="font-weight: 900; color: var(--accent); font-size: 1.2rem; letter-spacing: 2px;">VTEX</span>
-                </div>
-                <p style="font-weight: bold; margin-top: 10px;">E-commerce</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1sDfamxwjOuy9PR_fjmp4eYDCawkbVb_cYg&s" 
+                     alt="VTEX Logo" class="card-icon-img">
+                <p style="font-weight: bold; margin: 0;">VTEX</p>
             </div>
         </div>
 

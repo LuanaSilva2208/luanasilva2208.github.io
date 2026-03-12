@@ -3,114 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luana Vitória | Portfólio</title>
+    <title>Luana Vitória | Dev Portfolio</title>
     <style>
         :root {
+            /* Paleta Dark Mode com toques Neon */
             --bg: #010409;
             --text: #c9d1d9;
-            --accent: #58a6ff;
+            --accent: #58a6ff; /* Azul GitHub */
             --card-bg: rgba(13, 17, 23, 0.85); /* Fundo semi-transparente para leitura */
+            --border: #30363d;
         }
 
+        /* O PULO DO GATO: GIF QUE OCUPA A TELA TODA NO FUNDO */
         body, html {
             margin: 0;
             padding: 0;
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Segoe UI', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* O PULO DO GATO: GIF QUE OCUPA A TELA TODA NO TOPO */
-        .hero {
-            position: relative;
-            height: 100vh; /* Ocupa 100% da altura da tela */
-            width: 100%;
-            background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM255Nnh3eXh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxx7X66wG1G/giphy.gif') no-repeat center center;
+            background: #000 url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM355Nnh3eXh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFs.../3o7TKMGpxx7X66wG1G/giphy.gif') no-repeat center center fixed;
             background-size: cover; /* Faz o GIF cobrir tudo sem distorcer */
+            color: var(--text);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
+            min-height: 100vh;
+            line-height: 1.6;
         }
 
         /* Camada escura por cima do GIF para o texto ficar legível */
-        .hero-overlay {
-            position: absolute;
+        .body-overlay {
+            position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.5); 
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-            animation: fadeIn 2s ease;
+            background: rgba(0, 0, 0, 0.6); /* Ajuste a transparência aqui (0.1 a 0.9) */
+            z-index: -1;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; } to { opacity: 1; }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        h1 { font-size: 4rem; color: #fff; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
-        .subtitle { font-size: 1.5rem; color: var(--accent); font-weight: bold; }
 
         .container {
+            width: 90%;
             max-width: 900px;
-            margin: -50px auto 50px; /* Faz o conteúdo subir um pouco por cima do hero */
+            margin-top: 10vh; /* Espaço do topo */
+            animation: fadeIn 1s ease-out;
             position: relative;
-            z-index: 2;
-            padding: 20px;
+            z-index: 1;
         }
 
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: #fff;
+            margin: 0;
+            letter-spacing: -1px;
+            text-shadow: 0 0 15px rgba(88, 166, 255, 0.6); /* Brilho Neon */
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #8b949e;
+            margin-top: 10px;
+        }
+
+        .section-title {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            margin-top: 50px;
+            color: var(--accent);
+            text-shadow: 0 0 5px rgba(88, 166, 255, 0.4);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* ESTILO GLASSMORPHISM: CARTÕES QUE PARECEM VIDRO FUMÊ */
         .card {
             background: var(--card-bg);
             backdrop-filter: blur(10px); /* Efeito de vidro fosco */
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #30363d;
-            margin-bottom: 20px;
+            -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 32px rgba(88, 166, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .card h3 { margin-top: 0; color: var(--accent); }
+
+        .tag {
+            background: #1f2937;
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-right: 5px;
         }
 
         .btn {
             display: inline-block;
             margin-top: 20px;
-            padding: 15px 30px;
+            padding: 10px 25px;
             background-color: var(--accent);
             color: #fff;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 6px;
             font-weight: bold;
-            transition: 0.3s;
+            transition: 0.2s;
+            box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
         }
 
-        .btn:hover { transform: scale(1.1); box-shadow: 0 0 20px var(--accent); }
+        .btn:hover {
+            background-color: #79c0ff;
+            box-shadow: 0 6px 20px rgba(88, 166, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin: 100px 0 50px;
+            text-align: center;
+            color: #8b949e;
+            font-size: 0.9rem;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Luana Vitória</h1>
-            <p class="subtitle">Help Desk Analyst | Future Developer</p>
-            <a href="#about" class="btn">Saiba Mais</a>
-        </div>
-    </section>
+    <div class="body-overlay"></div>
 
-    <div class="container" id="about">
-        <div class="card">
-            <h2>Bem-vindo ao meu espaço! 🌌</h2>
-            <p>Atualmente focada na transição para o desenvolvimento de software, unindo minha experiência em suporte e resolução de problemas complexos com o poder da programação.</p>
+    <div class="container">
+        <header>
+            <h1>Luana Vitória</h1>
+            <p class="subtitle">Help Desk Analyst | Future Software Developer</p>
+            <a href="https://linkedin.com/in/luana-vitoria-souza-silva-834025201" class="btn">Vamos Conversar?</a>
+        </header>
+
+        <h2 class="section-title">🚀 Projetos em Destaque</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Meu Perfil GitHub</h3>
+                <p>Repositório especial com estatísticas em tempo real e automações.</p>
+                <span class="tag">Markdown</span> <span class="tag">Actions</span>
+            </div>
+            <div class="card">
+                <h3>Este Portfólio</h3>
+                <p>Site pessoal hospedado via GitHub Pages com foco em performance e design.</p>
+                <span class="tag">HTML</span> <span class="tag">CSS</span>
+            </div>
         </div>
-        
-        <div class="card">
-            <h3>Contatos</h3>
-            <p>Sinta-se à vontade para me chamar para um café ou projeto!</p>
-            <a href="https://linkedin.com/in/luana-vitoria-souza-silva-834025201" target="_blank" style="color:var(--accent)">LinkedIn</a> | 
-            <a href="https://github.com/LuanaSilva2208" target="_blank" style="color:var(--accent)">GitHub</a>
+
+        <h2 class="section-title">🛠️ Especialidades</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+            <div class="card" style="text-align: center;">VTEX Support</div>
+            <div class="card" style="text-align: center;">ERP / PDV</div>
+            <div class="card" style="text-align: center;">Git & GitHub</div>
+            <div class="card" style="text-align: center;">Troubleshooting</div>
         </div>
+
+        <footer>
+            <p>© 2026 Luana Vitória • Desenvolvido com código e café ☕</p>
+        </footer>
     </div>
 
 </body>

@@ -6,185 +6,165 @@
     <title>Luana Vitória | Dev Portfolio</title>
     <style>
         :root {
-            /* Paleta Dark Mode com toques Neon */
             --bg: #010409;
             --text: #c9d1d9;
-            --accent: #58a6ff; /* Azul GitHub */
-            --card-bg: rgba(13, 17, 23, 0.85); /* Fundo semi-transparente para leitura */
+            --accent: #58a6ff;
+            --card-bg: rgba(13, 17, 23, 0.9);
             --border: #30363d;
         }
 
-        /* O PULO DO GATO: GIF QUE OCUPA A TELA TODA NO FUNDO */
         body, html {
             margin: 0;
             padding: 0;
-            background: #000 url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM355Nnh3eXh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFs.../3o7TKMGpxx7X66wG1G/giphy.gif') no-repeat center center fixed;
-            background-size: cover; /* Faz o GIF cobrir tudo sem distorcer */
+            background: var(--bg);
             color: var(--text);
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
             min-height: 100vh;
-            line-height: 1.6;
         }
 
-        /* Camada escura por cima do GIF para o texto ficar legível */
-        .body-overlay {
+        /* FUNDO FIXO - Troquei para um link mais estável */
+        .background-fixed {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6); /* Ajuste a transparência aqui (0.1 a 0.9) */
+            background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueXF4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHgmZXA9djFfaW50ZXJuYWxfZ2lmX2J5X2lkJmN0PWc/3o7TKMGpxx7X66wG1G/giphy.gif') no-repeat center center;
+            background-size: cover;
+            z-index: -2;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
             z-index: -1;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-    max-width {
-    width: 90%;
-    /* Mude de 900px para algo mais amplo, como 1100px */
-    max-width: 1100px; 
-    margin: -50px auto 50px;
-    position: relative;
-    z-index: 2;
-    padding: 30px; /* Aumente o padding para dar mais ar */
-    animation: fadeIn 2s ease;
-}
-
-/* Ajuste sutil nas especialidades para o layout maior */
-.specialties-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    margin-top: 30px;
-}
-        header {
+        .container {
+            width: 95%;
+            max-width: 1100px; /* Expandido como você pediu */
+            margin: 0 auto;
+            padding: 50px 20px;
             text-align: center;
-            margin-bottom: 50px;
         }
 
         h1 {
             font-size: clamp(2.5rem, 8vw, 4rem);
             color: #fff;
             margin: 0;
-            letter-spacing: -1px;
-            text-shadow: 0 0 15px rgba(88, 166, 255, 0.6); /* Brilho Neon */
+            text-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
         }
 
-        .subtitle {
+        /* TRUQUE DE MESTRE: Efeito de digitação corrigido */
+        .typewriter-container {
             font-size: 1.2rem;
-            color: #8b949e;
+            color: var(--accent);
+            font-weight: bold;
             margin-top: 10px;
+            display: flex;
+            justify-content: center;
         }
 
-        .section-title {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
-            margin-top: 50px;
-            color: var(--accent);
-            text-shadow: 0 0 5px rgba(88, 166, 255, 0.4);
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid var(--accent);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
         }
+
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--accent); } }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
         }
 
-        /* ESTILO GLASSMORPHISM: CARTÕES QUE PARECEM VIDRO FUMÊ */
         .card {
             background: var(--card-bg);
-            backdrop-filter: blur(10px); /* Efeito de vidro fosco */
-            -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
-            padding: 25px;
-            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            transition: 0.3s;
+            text-align: left;
         }
 
         .card:hover {
             border-color: var(--accent);
-            box-shadow: 0 8px 32px rgba(88, 166, 255, 0.2);
             transform: translateY(-5px);
-        }
-
-        .card h3 { margin-top: 0; color: var(--accent); }
-
-        .tag {
-            background: #1f2937;
-            color: var(--accent);
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            margin-right: 5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .btn {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 25px;
-            background-color: var(--accent);
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: var(--accent);
             color: #fff;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 50px;
             font-weight: bold;
-            transition: 0.2s;
-            box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
+            transition: 0.3s;
         }
 
-        .btn:hover {
-            background-color: #79c0ff;
-            box-shadow: 0 6px 20px rgba(88, 166, 255, 0.5);
-            transform: translateY(-2px);
+        .btn:hover { filter: brightness(1.2); transform: scale(1.05); }
+
+        .tags span {
+            background: #1f2937;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
         }
 
-        footer {
-            margin: 100px 0 50px;
-            text-align: center;
-            color: #8b949e;
-            font-size: 0.9rem;
-            width: 100%;
-        }
+        footer { margin-top: 100px; padding-bottom: 50px; opacity: 0.6; }
     </style>
 </head>
 <body>
 
-    <div class="body-overlay"></div>
+    <div class="background-fixed"></div>
+    <div class="overlay"></div>
 
     <div class="container">
         <header>
             <h1>Luana Vitória</h1>
-            <p class="subtitle">Help Desk Analyst | Future Software Developer</p>
-            <a href="https://linkedin.com/in/luana-vitoria-souza-silva-834025201" class="btn">Vamos Conversar?</a>
+            <div class="typewriter-container">
+                <div class="typewriter">Future Software Developer</div>
+            </div>
+            <p style="opacity: 0.8;">Help Desk Analyst | IT Management</p>
+            <a href="https://linkedin.com/in/luana-vitoria-souza-silva-834025201" target="_blank" class="btn">Vamos Conversar?</a>
         </header>
 
-        <h2 class="section-title">🚀 Projetos em Destaque</h2>
+        <h2 style="margin-top: 80px; color: var(--accent);">🚀 Projetos em Destaque</h2>
         <div class="grid">
             <div class="card">
                 <h3>Meu Perfil GitHub</h3>
-                <p>Repositório especial com estatísticas em tempo real e automações.</p>
-                <span class="tag">Markdown</span> <span class="tag">Actions</span>
+                <p>Estatísticas em tempo real e automações personalizadas.</p>
+                <div class="tags"><span>Markdown</span><span>Actions</span></div>
             </div>
             <div class="card">
                 <h3>Este Portfólio</h3>
-                <p>Site pessoal hospedado via GitHub Pages com foco em performance e design.</p>
-                <span class="tag">HTML</span> <span class="tag">CSS</span>
+                <p>Layout expandido com design dark e efeitos de vidro fosco.</p>
+                <div class="tags"><span>HTML</span><span>CSS</span></div>
             </div>
         </div>
 
-        <h2 class="section-title">🛠️ Especialidades</h2>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-            <div class="card" style="text-align: center;">VTEX Support</div>
-            <div class="card" style="text-align: center;">ERP / PDV</div>
-            <div class="card" style="text-align: center;">Git & GitHub</div>
-            <div class="card" style="text-align: center;">Troubleshooting</div>
+        <h2 style="margin-top: 60px; color: var(--accent);">🛠️ Especialidades</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+            <div class="card" style="text-align: center; padding: 20px;">VTEX Support</div>
+            <div class="card" style="text-align: center; padding: 20px;">ERP / PDV</div>
+            <div class="card" style="text-align: center; padding: 20px;">Git & GitHub</div>
+            <div class="card" style="text-align: center; padding: 20px;">Troubleshooting</div>
         </div>
 
         <footer>
-            <p>© 2026 Luana Vitória • Desenvolvido com código e café ☕</p>
+            <p>© 2026 Luana Vitória • Criado com 💻 e ☕</p>
         </footer>
     </div>
 
 </body>
+</html>
 </html>

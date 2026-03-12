@@ -12,6 +12,7 @@
             --accent: #00d4ff; 
             --card-bg: rgba(10, 15, 25, 0.85);
             --border: rgba(0, 212, 255, 0.2);
+            --whatsapp: #25d366;
         }
 
         html, body {
@@ -103,6 +104,32 @@
             box-shadow: 0 0 30px var(--accent);
         }
 
+        /* BOTÃO WHATSAPP FLUTUANTE */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--whatsapp);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px var(--whatsapp);
+        }
+
         .tags span {
             background: rgba(0, 212, 255, 0.1);
             padding: 5px 12px;
@@ -115,16 +142,18 @@
 
         footer { margin-top: 100px; padding-bottom: 50px; opacity: 0.7; }
 
-        /* ESTILO DO LOGO VTEX COM FILTRO AZUL */
         .vtex-logo {
             height: 2.5rem;
             margin-bottom: 10px;
-            /* Filtro para converter o logo original em azul #00d4ff */
             filter: invert(62%) sepia(94%) saturate(4000%) hue-rotate(155deg) brightness(103%) contrast(101%);
         }
     </style>
 </head>
 <body>
+
+    <a href="https://wa.me/5511943660319" class="whatsapp-float" target="_blank">
+        <i class="devicon-whatsapp-plain"></i>
+    </a>
 
     <div class="container">
         <header>
@@ -140,14 +169,14 @@
             <div class="card">
                 <h3 style="color: var(--accent); margin-top: 0; font-size: 1.5rem;">🙋‍♀️ Sobre Mim</h3>
                 <p>Atuo no suporte técnico especializado e no desenvolvimento de sistemas, unindo a experiência de resolução direta de problemas com a capacidade de manter aplicações robustas.</p>
-                <p>Domino ferramentas como <strong>SQL</strong> para gestão de dados e <strong>WinDev</strong> para desenvolvimento desktop, garantindo eficiência e qualidade em cada solução.</p>
+                <p>Domino ferramentas essenciais como <strong>SQL</strong> para gestão de dados e <strong>WinDev</strong> para desenvolvimento, garantindo eficiência e qualidade em cada solução.</p>
             </div>
 
             <div class="card">
                 <h3 style="color: var(--accent); margin-top: 0; font-size: 1.5rem;">🚀 Stack & Foco</h3>
                 <p>Especializada em desenvolvimento WinDev e manipulação de dados em SQL, além de vivência em ecossistemas de E-commerce.</p>
                 <div class="tags"><span>SQL Server</span><span>WinDev</span><span>Git</span><span>VTEX</span></div>
-                <a href="https://github.com/luanasilva2208" target="_blank" style="color: var(--accent); text-decoration: none; display: block; margin-top: 20px; font-weight: bold;">Ver GitHub →</a>
+                <a href="https://github.com/luanasilva2208" target="_blank" style="color: var(--accent); text-decoration: none; display: block; margin-top: 20px; font-weight: bold;">Ver Repositórios no GitHub →</a>
             </div>
         </div>
 
@@ -172,7 +201,7 @@
         </div>
 
         <footer>
-            <p>© 2026 Luana Vitória • Software Developer 💻⚡</p>
+            <p>© 2026 Luana Vitória • Software Developer & Analista de Sistemas 💻⚡</p>
         </footer>
     </div>
 

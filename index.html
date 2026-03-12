@@ -14,19 +14,19 @@
             --border: #30363d;
         }
 
-        /* MÉTODO À PROVA DE FALHAS */
+        /* CONFIGURAÇÃO DO FUNDO - PLANETA TECH */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;
+            min-height: 100vh;
             font-family: 'Segoe UI', system-ui, sans-serif;
             color: var(--text);
-            /* Imagem de planeta tech azul profundo */
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
-                        url('https://images.unsplash.com/photo-1506703387226-bbce5f1669b9?q=80&w=2072&auto=format&fit=crop') no-repeat center center fixed;
+            /* O SEGREDO ESTÁ AQUI: Imagem + Camada Escura combinadas */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') no-repeat center center fixed;
             background-size: cover;
-            background-color: #010409; 
+            background-color: #010409; /* Cor de fundo caso a internet caia */
         }
 
         .container {
@@ -44,6 +44,7 @@
             text-shadow: 0 0 20px rgba(88, 166, 255, 0.5);
         }
 
+        /* EFEITO DE DIGITAÇÃO */
         .typewriter-container {
             font-size: 1.4rem;
             color: var(--accent);
@@ -78,7 +79,7 @@
             padding: 35px;
             border-radius: 20px;
             border: 1px solid var(--border);
-            transition: 0.3s;
+            transition: 0.3s ease;
             text-align: left;
         }
 
@@ -100,12 +101,18 @@
             transition: 0.3s;
         }
 
+        .btn:hover { 
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--accent);
+        }
+
         .tags span {
             background: #1f2937;
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
             margin-right: 5px;
+            border: 1px solid var(--border);
         }
 
         footer { margin-top: 100px; padding-bottom: 50px; opacity: 0.6; }
@@ -126,25 +133,37 @@
         <h2 style="margin-top: 100px; color: var(--accent);">🚀 Projetos em Destaque</h2>
         <div class="grid">
             <div class="card">
-                <i class="devicon-github-original" style="font-size: 2rem; color: var(--accent);"></i>
+                <i class="devicon-github-original" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; display: block;"></i>
                 <h3>Meu Perfil GitHub</h3>
                 <p>Estatísticas em tempo real e automações personalizadas.</p>
                 <div class="tags"><span>Markdown</span><span>Actions</span></div>
             </div>
             <div class="card">
-                <i class="devicon-html5-plain" style="font-size: 2rem; color: var(--accent);"></i>
+                <i class="devicon-html5-plain" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; display: block;"></i>
                 <h3>Este Portfólio</h3>
-                <p>Layout imersivo com design dark e efeito Glassmorphism.</p>
+                <p>Layout expandido com design imersivo e efeito de vidro.</p>
                 <div class="tags"><span>HTML</span><span>CSS</span></div>
             </div>
         </div>
 
         <h2 style="margin-top: 80px; color: var(--accent);">🛠️ Toolbox</h2>
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-            <div class="card" style="text-align: center; padding: 20px;">VTEX</div>
-            <div class="card" style="text-align: center; padding: 20px;">ERP / PDV</div>
-            <div class="card" style="text-align: center; padding: 20px;">Git & GitHub</div>
-            <div class="card" style="text-align: center; padding: 20px;">IT Support</div>
+            <div class="card" style="text-align: center; padding: 25px;">
+                <strong>VTEX</strong>
+                <p style="font-size: 0.8rem; margin: 5px 0 0;">E-commerce</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 25px;">
+                <strong>ERP / PDV</strong>
+                <p style="font-size: 0.8rem; margin: 5px 0 0;">Sistemas</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 25px;">
+                <strong>Git & GitHub</strong>
+                <p style="font-size: 0.8rem; margin: 5px 0 0;">Versão</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 25px;">
+                <strong>IT Support</strong>
+                <p style="font-size: 0.8rem; margin: 5px 0 0;">Troubleshoot</p>
+            </div>
         </div>
 
         <footer>

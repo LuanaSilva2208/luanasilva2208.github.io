@@ -18,24 +18,31 @@
         body, html {
             margin: 0;
             padding: 0;
-            background: var(--bg);
+            background-color: var(--bg); /* Fundo de segurança */
             color: var(--text);
             font-family: 'Segoe UI', system-ui, sans-serif;
             min-height: 100vh;
-            scroll-behavior: smooth;
         }
 
+        /* A IMAGEM DO PLANETA */
         .background-fixed {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') no-repeat center center;
             background-size: cover;
-            z-index: -2;
+            z-index: -2; /* Fica atrás de tudo */
         }
 
+        /* CAMADA ESCURA PARA DAR LEITURA */
         .overlay {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.75);
             z-index: -1;
         }
@@ -46,6 +53,7 @@
             margin: 0 auto;
             padding: 80px 20px;
             text-align: center;
+            position: relative;
         }
 
         h1 {
@@ -55,6 +63,7 @@
             text-shadow: 0 0 20px rgba(88, 166, 255, 0.5);
         }
 
+        /* EFEITO DE DIGITAÇÃO */
         .typewriter-container {
             font-size: 1.4rem;
             color: var(--accent);
@@ -85,25 +94,18 @@
         .card {
             background: var(--card-bg);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             padding: 35px;
             border-radius: 20px;
             border: 1px solid var(--border);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
             text-align: left;
         }
 
         .card:hover {
             border-color: var(--accent);
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: 0 10px 40px rgba(88, 166, 255, 0.2);
-            background: rgba(22, 27, 34, 0.95);
-        }
-
-        .card i {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-            display: block;
         }
 
         .btn {
@@ -116,25 +118,22 @@
             border-radius: 50px;
             font-weight: bold;
             transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(88, 166, 255, 0.3);
         }
 
         .btn:hover { 
-            filter: brightness(1.2); 
             transform: scale(1.05);
-            box-shadow: 0 5px 25px var(--accent);
+            box-shadow: 0 0 20px var(--accent);
         }
 
         .tags span {
             background: #1f2937;
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.85rem;
-            margin-right: 8px;
-            border: 1px solid var(--border);
+            font-size: 0.8rem;
+            margin-right: 5px;
         }
 
-        footer { margin-top: 120px; padding-bottom: 60px; opacity: 0.5; font-size: 0.9rem; }
+        footer { margin-top: 100px; padding-bottom: 50px; opacity: 0.6; }
     </style>
 </head>
 <body>
@@ -148,52 +147,36 @@
             <div class="typewriter-container">
                 <div class="typewriter">Future Software Developer</div>
             </div>
-            <p style="font-size: 1.1rem; opacity: 0.7;">Help Desk Analyst | IT Management | Problem Solver</p>
-            <a href="https://linkedin.com/in/luana-vitoria-souza-silva-834025201" target="_blank" class="btn">Conectar no LinkedIn</a>
+            <p style="font-size: 1.1rem; opacity: 0.8;">Help Desk Analyst | IT Management</p>
+            <a href="https://linkedin.com/in/luana-vitoria-souza-silva-834025201" target="_blank" class="btn">Vamos Conversar?</a>
         </header>
 
-        <h2 style="margin-top: 100px; color: var(--accent); font-size: 2rem;">🚀 Projetos em Destaque</h2>
+        <h2 style="margin-top: 100px; color: var(--accent);">🚀 Projetos em Destaque</h2>
         <div class="grid">
             <div class="card">
-                <i class="devicon-github-original"></i>
+                <i class="devicon-github-original" style="font-size: 2rem; color: var(--accent);"></i>
                 <h3>Meu Perfil GitHub</h3>
-                <p>Estatísticas em tempo real, jogo da cobrinha e automações de workflow.</p>
-                <div class="tags"><span>Markdown</span><span>GitHub Actions</span></div>
+                <p>Estatísticas em tempo real e automações personalizadas.</p>
+                <div class="tags"><span>Markdown</span><span>Actions</span></div>
             </div>
             <div class="card">
-                <i class="devicon-html5-plain"></i>
+                <i class="devicon-html5-plain" style="font-size: 2rem; color: var(--accent);"></i>
                 <h3>Este Portfólio</h3>
-                <p>Layout imersivo com Glassmorphism, design responsivo e efeitos CSS modernos.</p>
-                <div class="tags"><span>HTML5</span><span>CSS3</span><span>UI Design</span></div>
+                <p>Layout expandido com design dark e efeito Glassmorphism.</p>
+                <div class="tags"><span>HTML</span><span>CSS</span></div>
             </div>
         </div>
 
-        <h2 style="margin-top: 80px; color: var(--accent); font-size: 2rem;">🛠️ Toolbox</h2>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-            <div class="card" style="text-align: center;">
-                <i class="devicon-vtex-plain"></i>
-                <h3>VTEX</h3>
-                <p style="font-size: 0.9rem;">E-commerce Support</p>
-            </div>
-            <div class="card" style="text-align: center;">
-                <i class="devicon-git-plain"></i>
-                <h3>Git & GitHub</h3>
-                <p style="font-size: 0.9rem;">Version Control</p>
-            </div>
-            <div class="card" style="text-align: center;">
-                <i class="devicon-vscode-plain"></i>
-                <h3>Support</h3>
-                <p style="font-size: 0.9rem;">ERP / PDV / Hardware</p>
-            </div>
-            <div class="card" style="text-align: center;">
-                <i class="devicon-javascript-plain"></i>
-                <h3>Studying</h3>
-                <p style="font-size: 0.9rem;">Full Stack Path</p>
-            </div>
+        <h2 style="margin-top: 80px; color: var(--accent);">🛠️ Especialidades</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+            <div class="card" style="text-align: center; padding: 20px;">VTEX Support</div>
+            <div class="card" style="text-align: center; padding: 20px;">ERP / PDV</div>
+            <div class="card" style="text-align: center; padding: 20px;">Git & GitHub</div>
+            <div class="card" style="text-align: center; padding: 20px;">Troubleshooting</div>
         </div>
 
         <footer>
-            <p>© 2026 Luana Vitória • Construindo o futuro, um commit de cada vez. 💻⚡</p>
+            <p>© 2026 Luana Vitória • Criado com 💻 e ☕</p>
         </footer>
     </div>
 

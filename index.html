@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luana Vitória | Dev Portfolio</title>
+    <title>Luana Vitória | Software Developer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     
     <style>
         :root {
-            --text: #c9d1d9;
-            --accent: #58a6ff;
-            --card-bg: rgba(13, 17, 23, 0.85);
-            --border: #30363d;
+            --text: #ffffff;
+            --accent: #00d4ff; /* Um azul mais elétrico para combinar com a imagem */
+            --card-bg: rgba(10, 15, 25, 0.8);
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         html, body {
@@ -21,10 +21,11 @@
             min-height: 100vh;
             font-family: 'Segoe UI', system-ui, sans-serif;
             color: var(--text);
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') no-repeat center center fixed;
+            /* NOVA IMAGEM COM BRILHO AJUSTADO (Camada preta mais clara: 0.5) */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
             background-size: cover;
-            background-color: #010409;
+            background-color: #050a10;
         }
 
         .container {
@@ -39,11 +40,11 @@
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             color: #fff;
             margin: 0;
-            text-shadow: 0 0 20px rgba(88, 166, 255, 0.5);
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
         }
 
         .typewriter-container {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             color: var(--accent);
             font-weight: bold;
             margin: 15px 0;
@@ -64,15 +65,15 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
             margin-top: 50px;
         }
 
         .card {
             background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             padding: 35px;
             border-radius: 20px;
             border: 1px solid var(--border);
@@ -83,7 +84,7 @@
         .card:hover {
             border-color: var(--accent);
             transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(88, 166, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
         }
 
         .btn {
@@ -91,7 +92,7 @@
             margin-top: 30px;
             padding: 15px 40px;
             background: var(--accent);
-            color: #fff;
+            color: #000; /* Texto escuro no botão brilhante dá mais leitura */
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
@@ -100,19 +101,20 @@
 
         .btn:hover { 
             transform: scale(1.05);
-            box-shadow: 0 0 20px var(--accent);
+            box-shadow: 0 0 30px var(--accent);
         }
 
         .tags span {
-            background: #1f2937;
+            background: rgba(0, 212, 255, 0.1);
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
             margin-right: 5px;
-            border: 1px solid var(--border);
+            border: 1px solid var(--accent);
+            color: var(--accent);
         }
 
-        footer { margin-top: 100px; padding-bottom: 50px; opacity: 0.6; }
+        footer { margin-top: 100px; padding-bottom: 50px; opacity: 0.7; }
     </style>
 </head>
 <body>
@@ -121,49 +123,49 @@
         <header>
             <h1>Luana Vitória</h1>
             <div class="typewriter-container">
-                <div class="typewriter">Future Software Developer</div>
+                <div class="typewriter">Software Developer</div>
             </div>
-            <p style="font-size: 1.1rem; opacity: 0.8;">Help Desk Analyst | Gestão de TI</p>
-            <a href="https://linkedin.com/in/luana-vitoria-souza-silva-834025201" target="_blank" class="btn">Vamos Conversar?</a>
+            <p style="font-size: 1.2rem; opacity: 0.9; font-weight: 300;">SQL | WinDev | Help Desk Analyst | Gestão de TI</p>
+            <a href="https://linkedin.com/in/luana-vitoria-souza-silva-834025201" target="_blank" class="btn">Conectar no LinkedIn</a>
         </header>
 
         <div class="grid">
             <div class="card">
-                <h3 style="color: var(--accent); margin-top: 0;">🙋‍♀️ Sobre Mim</h3>
-                <p>Analista de Help Desk apaixonada por tecnologia e em transição para o desenvolvimento de software. Tenho experiência com suporte VTEX, sistemas ERP e resolução de problemas complexos (troubleshooting).</p>
-                <p>Atualmente focada em aprender Full Stack e aprimorar meus conhecimentos em Git e metodologias ágeis.</p>
+                <h3 style="color: var(--accent); margin-top: 0; font-size: 1.5rem;">🙋‍♀️ Sobre Mim</h3>
+                <p>Desenvolvedora com sólida base em lógica de programação e manipulação de dados. Atuo na intersecção entre suporte técnico avançado e desenvolvimento, com foco em eficiência operacional.</p>
+                <p>Experiência prática em <strong>SQL</strong> para gestão de bancos de dados e <strong>WinDev</strong> para criação de aplicações robustas, além de expertise em ecossistemas VTEX.</p>
             </div>
 
             <div class="card">
-                <h3 style="color: var(--accent); margin-top: 0;">🚀 Meu GitHub</h3>
-                <p>Aqui você encontra meus repositórios, estudos de lógica e automações que venho desenvolvendo.</p>
-                <div class="tags"><span>Markdown</span><span>Actions</span><span>Estudos</span></div>
-                <a href="https://github.com/luanasilva2208" target="_blank" style="color: var(--accent); text-decoration: none; display: block; margin-top: 15px; font-weight: bold;">Ver Repositórios →</a>
+                <h3 style="color: var(--accent); margin-top: 0; font-size: 1.5rem;">🚀 Stack & Projetos</h3>
+                <p>Desenvolvendo soluções integradas e automações para otimizar processos de TI e suporte nível 2/3.</p>
+                <div class="tags"><span>SQL Server</span><span>WinDev</span><span>Git</span><span>VTEX</span></div>
+                <a href="https://github.com/luanasilva2208" target="_blank" style="color: var(--accent); text-decoration: none; display: block; margin-top: 20px; font-weight: bold;">Explorar código no GitHub →</a>
             </div>
         </div>
 
-        <h2 style="margin-top: 80px; color: var(--accent);">🛠️ Toolbox</h2>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+        <h2 style="margin-top: 80px; color: var(--accent);">🛠️ Especialidades</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
             <div class="card" style="text-align: center; padding: 25px;">
-                <i class="devicon-vtex-plain" style="font-size: 2rem;"></i>
-                <p style="margin: 10px 0 0;">VTEX</p>
+                <i class="devicon-azuresqldatabase-plain" style="font-size: 2.5rem; color: var(--accent);"></i>
+                <p style="margin: 15px 0 0; font-weight: bold;">SQL</p>
             </div>
             <div class="card" style="text-align: center; padding: 25px;">
-                <i class="devicon-vscode-plain" style="font-size: 2rem;"></i>
-                <p style="margin: 10px 0 0;">Sistemas ERP</p>
+                <i class="devicon-windows8-original" style="font-size: 2.5rem; color: var(--accent);"></i>
+                <p style="margin: 15px 0 0; font-weight: bold;">WinDev</p>
             </div>
             <div class="card" style="text-align: center; padding: 25px;">
-                <i class="devicon-git-plain" style="font-size: 2rem;"></i>
-                <p style="margin: 10px 0 0;">Git & GitHub</p>
+                <i class="devicon-git-plain" style="font-size: 2.5rem; color: var(--accent);"></i>
+                <p style="margin: 15px 0 0; font-weight: bold;">Git & Versionamento</p>
             </div>
             <div class="card" style="text-align: center; padding: 25px;">
-                <i class="devicon-windows8-original" style="font-size: 2rem;"></i>
-                <p style="margin: 10px 0 0;">IT Support</p>
+                <i class="devicon-vtex-plain" style="font-size: 2.5rem; color: var(--accent);"></i>
+                <p style="margin: 15px 0 0; font-weight: bold;">E-commerce & ERP</p>
             </div>
         </div>
 
         <footer>
-            <p>© 2026 Luana Vitória • Criado com 💻 e ☕</p>
+            <p>© 2026 Luana Vitória • Desenvolvendo soluções com SQL e WinDev 💻⚡</p>
         </footer>
     </div>
 

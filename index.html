@@ -1,249 +1,372 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luana Vitoria | Systems Analyst | SQL • WinDev • Git</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    
-    <style>
-        :root {
-            --text: #ffffff;
-            --accent: #00d4ff; 
-            --card-bg: rgba(10, 15, 25, 0.85);
-            --border: rgba(0, 212, 255, 0.2);
-            --whatsapp-green: #25d366;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luana Vitoria | Systems Analyst | SQL • WinDev • Git</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            min-height: 100vh;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            color: var(--text);
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
-                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
-            background-size: cover;
-            background-color: #050a10;
-        }
+  <style>
+    :root {
+      --text: #ffffff;
+      --accent: #00d4ff;
+      --card-bg: rgba(10, 15, 25, 0.85);
+      --border: rgba(0, 212, 255, 0.2);
+      --whatsapp-green: #25d366;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1100px; 
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-        }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      color: var(--text);
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+                  url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #050a10;
+    }
 
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            color: #fff;
-            margin: 0;
-            text-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
-        }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
 
-        .typewriter-container {
-            font-size: 1.6rem;
-            color: var(--accent);
-            font-weight: bold;
-            margin: 15px 0;
-            display: flex;
-            justify-content: center;
-        }
+    header {
+      text-align: center;
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      color: #fff;
+      margin: 0;
+      text-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+    }
 
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(15px);
-            padding: 35px;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            transition: 0.3s ease;
-            text-align: left;
-            line-height: 1.6;
-        }
+    .typewriter-container {
+      font-size: 1.6rem;
+      color: var(--accent);
+      font-weight: bold;
+      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+    }
 
-        .card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
-        }
+    .subtitle {
+      opacity: 0.9;
+      font-weight: 300;
+      margin: 0;
+    }
 
-        /* SEÇÃO DE PROJETOS */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
 
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            transition: 0.3s;
-            text-align: left;
-        }
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(15px);
+      padding: 35px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: 0.3s ease;
+      text-align: left;
+      line-height: 1.6;
+    }
 
-        .project-card:hover {
-            transform: scale(1.02);
-            border-color: var(--accent);
-        }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
+    }
 
-        .project-img {
-            width: 100%;
-            height: 180px;
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-weight: bold;
-            border-bottom: 1px solid var(--border);
-            background-size: cover;
-            background-position: center;
-        }
+    /* SEÇÃO DE PROJETOS */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
 
-        .project-info { padding: 20px; }
-        .project-info h3 { margin: 0 0 10px 0; color: var(--accent); }
-        .project-info p { font-size: 0.9rem; opacity: 0.8; margin-bottom: 15px; }
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: 0.3s;
+      text-align: left;
+    }
 
-        /* BOTÕES E TAGS */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px; right: 30px;
-            width: 60px; height: 60px;
-            background-color: var(--whatsapp-green);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            z-index: 1000; transition: 0.3s;
-        }
+    .project-card:hover {
+      transform: scale(1.02);
+      border-color: var(--accent);
+    }
 
-        .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px var(--whatsapp-green); }
-        .whatsapp-btn svg { width: 32px; height: 32px; fill: white; }
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--border);
+    }
 
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 35px;
-            background: var(--accent);
-            color: #000;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+    .project-info {
+      padding: 20px;
+    }
 
-        .btn:hover { background: #fff; transform: scale(1.05); }
+    .project-info h3 {
+      margin: 0 0 10px 0;
+      color: var(--accent);
+    }
 
-        .tags span {
-            background: rgba(0, 212, 255, 0.1);
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            margin-right: 5px;
-            display: inline-block;
-            margin-bottom: 5px;
-        }
+    .project-info p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 15px;
+    }
 
-        footer { margin-top: 80px; padding-bottom: 40px; opacity: 0.6; font-size: 0.9rem; }
+    /* BOTÕES E TAGS */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: var(--whatsapp-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      z-index: 1000;
+      transition: 0.3s;
+    }
 
-        .card-icon-img { height: 2.5rem; margin-bottom: 10px; border-radius: 4px; }
-    </style>
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px var(--whatsapp-green);
+    }
+
+    .whatsapp-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 35px;
+      background: var(--accent);
+      color: #000;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+
+    .tags span {
+      background: rgba(0, 212, 255, 0.1);
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 0.75rem;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      margin-right: 5px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-bottom: 40px;
+      opacity: 0.6;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .card-icon-img {
+      height: 2.5rem;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    /* Skip link acessível */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 10px;
+      background: #000;
+      color: #fff;
+      padding: 8px 14px;
+      text-decoration: none;
+      border-radius: 0 0 4px 4px;
+      z-index: 2000;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Foco visível em links/botões */
+    a:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
+    }
+  </style>
 </head>
 <body>
 
-    <a href="https://wa.me/5511943660319" class="whatsapp-btn" target="_blank">
-        <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.2-4.3-6.8c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.6-30.6-38.1-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-    </a>
+  <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
 
+  <a
+    href="https://wa.me/5511943660319"
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Iniciar conversa no WhatsApp com Luana Vitoria"
+    role="button"
+  >
+    <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false">
+      <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.2-4.3-6.8c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.6-30.6-38.1-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+    </svg>
+  </a>
+
+  <header>
     <div class="container">
-        <header>
-            <h1>Luana Vitoria</h1>
-            <div class="typewriter-container">Software Developer</div>
-            <p style="opacity: 0.9; font-weight: 300;">Analista de Suporte N1 | Analista de Sistemas N2</p>
-            <a href="https://linkedin.com/in/luana-vitoria-souza-silva-834025201" target="_blank" class="btn">Conectar no LinkedIn</a>
-        </header>
-
-        <div class="grid">
-            <div class="card">
-                <h3 style="color: var(--accent); margin-top: 0;">🙋‍♀️ Sobre Mim</h3>
-                <p>Sou apaixonada por decifrar processos e transformá-los em código eficiente. Com formação em <strong>Gestão de TI</strong> e experiência prática no ecossistema de <strong>E-commerce</strong>, transito entre o suporte estratégico e o desenvolvimento de sistemas.</p>
-                <p>Atualmente, foco em <strong>manipulação de dados</strong> e na arquitetura de soluções que trazem agilidade e escalabilidade para o dia a dia tecnológico.</p>
-            </div>
-
-            <div class="card">
-                <h3 style="color: var(--accent); margin-top: 0;">🚀 Stack & Foco</h3>
-                <p>Focada em desenvolvimento desktop e manipulação de dados, com experiência prática em ecossistemas de E-commerce.</p>
-                <div class="tags"><span>SQL Server</span><span>WinDev</span><span>Git</span><span>VTEX</span></div>
-                <p style="margin-top: 20px;"><a href="https://github.com/luanasilva2208" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: bold;">Ver GitHub →</a></p>
-            </div>
-        </div>
-
-        <h2 style="margin-top: 80px; color: var(--accent);">📂 Projetos em Destaque</h2>
-        <div class="project-grid">
-            
-            <div class="project-card">
-                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bbbda5366392?q=80&w=500&auto=format&fit=crop');">
-                    </div>
-                <div class="project-info">
-                    <div class="tags"><span>SQL Server</span><span>WinDev</span></div>
-                    <h3>Automação de ERP</h3>
-                    <p>Desenvolvimento de módulos para otimização de fluxo de estoque e integração de pedidos.</p>
-                    <a href="#" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: bold;">Ver Detalhes →</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=500&auto=format&fit=crop');">
-                </div>
-                <div class="project-info">
-                    <div class="tags"><span>VTEX</span><span>API</span></div>
-                    <h3>Integração E-commerce</h3>
-                    <p>Configuração e suporte especializado em ecossistema VTEX para grandes varejistas.</p>
-                    <a href="#" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: bold;">Ver Detalhes →</a>
-                </div>
-            </div>
-
-        </div>
-
-        <h2 style="margin-top: 80px; color: var(--accent);">🛠️ Especialidades</h2>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-            <div class="card" style="text-align: center; padding: 25px;">
-                <i class="devicon-azuresqldatabase-plain" style="font-size: 2.5rem; color: var(--accent);"></i>
-                <p style="font-weight: bold; margin-top: 10px;">SQL</p>
-            </div>
-            <div class="card" style="text-align: center; padding: 25px;">
-                <img src="https://defkey.com/images/program/windev-25-2020-11-02_10-53-58-icon-resized.webp" 
-                     alt="WinDev Logo" class="card-icon-img">
-                <p style="font-weight: bold; margin: 0;">WinDev</p>
-            </div>
-            <div class="card" style="text-align: center; padding: 25px;">
-                <i class="devicon-git-plain" style="font-size: 2.5rem; color: var(--accent);"></i>
-                <p style="font-weight: bold; margin-top: 10px;">Git</p>
-            </div>
-            <div class="card" style="text-align: center; padding: 25px;">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1sDfamxwjOuy9PR_fjmp4eYDCawkbVb_cYg&s" 
-                     alt="VTEX Logo" class="card-icon-img">
-                <p style="font-weight: bold; margin: 0;">VTEX</p>
-            </div>
-        </div>
-
-        <footer>
-            <p>© 2026 Luana Vitoria • Software Developer • Criado com 💻 e ☕</p>
-        </footer>
+      <h1>Luana Vitoria</h1>
+      <div class="typewriter-container">Software Developer</div>
+      <p class="subtitle">Analista de Suporte N1 | Analista de Sistemas N2</p>
+      <a href="https://linkedin.com/in/luana-vitoria-souza-silva-834025201"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn">
+        Conectar no LinkedIn
+      </a>
     </div>
+  </header>
+
+  <main id="conteudo-principal" class="container">
+    <section aria-labelledby="sobre-heading">
+      <div class="grid">
+        <article class="card">
+          <h2 id="sobre-heading" style="color: var(--accent); margin-top: 0;">🙋‍♀️ Sobre Mim</h2>
+          <p>Sou apaixonada por decifrar processos e transformá-los em código eficiente. Com formação em <strong>Gestão de TI</strong> e experiência prática no ecossistema de <strong>E-commerce</strong>, transito entre o suporte estratégico e o desenvolvimento de sistemas.</p>
+          <p>Atualmente, foco em <strong>manipulação de dados</strong> e na arquitetura de soluções que trazem agilidade e escalabilidade para o dia a dia tecnológico.</p>
+        </article>
+
+        <article class="card" aria-labelledby="stack-heading">
+          <h2 id="stack-heading" style="color: var(--accent); margin-top: 0;">🚀 Stack &amp; Foco</h2>
+          <p>Focada em desenvolvimento desktop e manipulação de dados, com experiência prática em ecossistemas de E-commerce.</p>
+          <div class="tags">
+            <span>SQL Server</span><span>WinDev</span><span>Git</span><span>VTEX</span>
+          </div>
+          <p style="margin-top: 20px;">
+            <a href="https://github.com/luanasilva2208"
+               target="_blank"
+               rel="noopener noreferrer"
+               style="color: var(--accent); text-decoration: none; font-weight: bold;">
+              Ver meu perfil no GitHub →
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="projetos-heading">
+      <h2 id="projetos-heading" style="margin-top: 80px; color: var(--accent);">📂 Projetos em Destaque</h2>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bbbda5366392?q=80&w=500&auto=format&fit=crop"
+            alt="Monitor exibindo gráficos e sistema de gestão de estoque"
+            class="project-img"
+            loading="lazy"
+          >
+          <div class="project-info">
+            <div class="tags"><span>SQL Server</span><span>WinDev</span></div>
+            <h3>Automação de ERP</h3>
+            <p>Desenvolvimento de módulos para otimização de fluxo de estoque e integração de pedidos.</p>
+            <a href="#"
+               style="color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: bold;">
+              Ver detalhes do projeto Automação de ERP →
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img
+            src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=500&auto=format&fit=crop"
+            alt="Pessoa usando notebook e celular para operações de e-commerce"
+            class="project-img"
+            loading="lazy"
+          >
+          <div class="project-info">
+            <div class="tags"><span>VTEX</span><span>API</span></div>
+            <h3>Integração E-commerce</h3>
+            <p>Configuração e suporte especializado em ecossistema VTEX para grandes varejistas.</p>
+            <a href="#"
+               style="color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: bold;">
+              Ver detalhes do projeto Integração E-commerce →
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="especialidades-heading">
+      <h2 id="especialidades-heading" style="margin-top: 80px; color: var(--accent);">🛠️ Especialidades</h2>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+        <article class="card" style="text-align: center; padding: 25px;">
+          <i class="devicon-azuresqldatabase-plain"
+             style="font-size: 2.5rem; color: var(--accent);"
+             aria-hidden="true"></i>
+          <p style="font-weight: bold; margin-top: 10px;">SQL</p>
+        </article>
+
+        <article class="card" style="text-align: center; padding: 25px;">
+          <img src="https://defkey.com/images/program/windev-25-2020-11-02_10-53-58-icon-resized.webp"
+               alt="Logo da ferramenta de desenvolvimento WinDev"
+               class="card-icon-img"
+               loading="lazy">
+          <p style="font-weight: bold; margin: 0;">WinDev</p>
+        </article>
+
+        <article class="card" style="text-align: center; padding: 25px;">
+          <i class="devicon-git-plain"
+             style="font-size: 2.5rem; color: var(--accent);"
+             aria-hidden="true"></i>
+          <p style="font-weight: bold; margin-top: 10px;">Git</p>
+        </article>
+
+        <article class="card" style="text-align: center; padding: 25px;">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1sDfamxwjOuy9PR_fjmp4eYDCawkbVb_cYg&s"
+               alt="Logo da plataforma VTEX"
+               class="card-icon-img"
+               loading="lazy">
+          <p style="font-weight: bold; margin: 0;">VTEX</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2026 Luana Vitoria • Software Developer • Criado com 💻 e ☕</p>
+  </footer>
 
 </body>
 </html>
